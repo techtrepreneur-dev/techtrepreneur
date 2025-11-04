@@ -1,63 +1,66 @@
-import Link from 'next/link';
 import React from 'react'
-import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa6'
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { SiGithub } from "react-icons/si";
-import { FaEnvelope } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
+// import MessageForm from './MessageForm'
+import Link from 'next/link'
+import { CiFacebook, CiLinkedin, CiTwitter } from 'react-icons/ci'
+import { BsWhatsapp } from 'react-icons/bs'
+
 export default function Footer() {
     return (
-        <section className="contact" id="contact">
-            <div className="contact-wrapper px-3">
-                {/* <div id="bg-footer"></div> */}
-                <div className="container mx-auto pb-4 md:px-0 px-3">
-                    <h2 className="pb-5 text-center text-4xl">GET IN TOUCH</h2>
-                    <div className="flex flex-wrap">
-                        <div className="md:w-3/12 w-full p-2">
-                            <div className="contact-item  my-4">
-                                <div className="contact-logo">
-                                    <h1 className='text-4xl'>Eskanor</h1>
-                                    <div className="useful-links mt-4">
-                                        <Link href="https://web.facebook.com/profile.php?id=100091377859958" className="flex gap-2 mb-4 text-lg items-center"><span><FaFacebook className='text-gray-400' /> </span> <span className='transition-all duration-300 ease-in-out hover:ml-8 block'>Facebook</span></Link>
-                                        <Link href="https://twitter.com/TEskanor79367" className="flex gap-2 mb-4 text-lg items-center"><span><FaTwitter className='text-gray-400' /> </span> <span className='transition-all duration-300 ease-in-out hover:ml-4 block'>Twitter</span></Link>
-                                        <Link href="https://www.linkedin.com/in/eskanor-tik-17b128271/" className="flex gap-2 mb-4 text-lg items-center"><span><FaLinkedin className='text-gray-400' /> </span> <span className='transition-all duration-300 ease-in-out hover:ml-4 block'>Linkedin</span></Link>
-                                    </div>
-                                </div>
-                            </div>
+        <section className='py-8 bg-gradient-to-b from-primary to-black/95 border-t border-white/30' id='contact'>
+            <div className="container mx-auto px-3 md:px-6">
+                <div className="flex justify-center gap-3 items-center mt-5"><span className='border border-white max-w-[40px] md:max-w-[70px] w-full '></span> <span className='text-2xl md:text-3xl text-gray-200 poppins-medium'>Reach Us</span><span className='border border-white max-w-[40px] md:max-w-[70px] w-full'></span> </div>
+
+                <div className="flex flex-wrap mt-10 roboto-regular">
+                    <div className="w-full md:w-3/12 p-3">
+                        <Link href="/" className="text-white roboto-regular block text-3xl transition-colors">
+                            <span className='font-bold text-4xl text-amber-300'>T</span>echtrepreneur
+                        </Link>
+                        <div className='mt-2 mb-4 max-w-[280px]'>
+                            <p className='text-sm text-gray-300 max-w-[300px] poppins-regular'><i><span className='font-semibold'>Let's Tech It</span></i></p>
                         </div>
-                        <div className="md:w-3/12 w-full p-2">
-                            <div className="contact-item  my-4">
-                                <div className="contact-logo">
-                                    <h4 className='text-2xl'>Useful links</h4>
-                                    <div className="useful-links mt-4">
-                                        <Link href="/" className="flex gap-2 mb-4 text-lg items-center"><span><MdOutlineKeyboardArrowRight size={20} className='text-gray-400' /> </span> <span className='transition-all duration-300 ease-in-out hover:ml-3 block'>Home</span></Link>
-                                        <Link href="/#about" className="flex gap-2 mb-4 text-lg items-center"><span><MdOutlineKeyboardArrowRight size={20} className='text-gray-400' /> </span> <span className='transition-all duration-300 ease-in-out  hover:ml-3 block'>About</span></Link>
-                                        <Link href="/#skills" className="flex gap-2 mb-4 text-lg items-center"><span><MdOutlineKeyboardArrowRight size={20} className='text-gray-400' /> </span> <span className='transition-all duration-300 ease-in-out  hover:ml-3 block'>Skills</span></Link>
-                                        <Link href="/#projects" className="flex gap-2 mb-4 text-lg items-center"><span><MdOutlineKeyboardArrowRight size={20} className='text-gray-400' /> </span> <span className='transition-all duration-300 ease-in-out  hover:ml-3 block'>Projects</span></Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="md:w-3/12 w-full p-2">
-                            <div className="contact-item  my-4 w-75">
-                                <h4 className='text-2xl flex gap-2 items-center'>Email <FaEnvelope className='text-gray-400' /></h4>
-                                <p>tik.eskanor@gmail.com</p>
-                            </div>
-                            <div className="contact-item  my-4 w-75">
-                                <h4 className='text-2xl flex gap-2 items-center'>Whats app <IoLogoWhatsapp className='text-gray-400' /></h4>
-                                <p>+234 7019393627</p>
-                            </div>
-                        </div>
-                        <div className="md:w-3/12 w-full p-2 my-4 ">
-                            <div className="contact-item">
-                                <SiGithub size={40} className='mb-5 text-gray-400' />
-                                <p>Check me out on <Link href="https://github.com/Tik-Eskanor" className='text-blue-700'><strong>Github</strong></Link> for more projects</p>
-                            </div>
+                        <div className="flex gap-3 text-white/50 my-3">
+                            <CiFacebook size={30} className="cursor-pointer hover:text-amber-300 transition-all duration-300" />
+                            <CiLinkedin size={30} className="cursor-pointer hover:text-amber-300 transition-all duration-300" />
+                            <CiTwitter size={30} className="cursor-pointer hover:text-amber-300 transition-all duration-300" />
                         </div>
                     </div>
+
+                    <div className="w-full md:w-3/12 p-3">
+                        <div className="text-xl text-white poppins-medium">Call us at:</div>
+                        <p className='mt-1 text-gray-200 roboto-regular text-sm'>+234 0719393627</p>
+
+                        <div className="text-xl text-white mt-3 poppins-medium">Send an email</div>
+                        <p className='mt-1 text-gray-200 roboto-regular text-sm'>techtrepreneur.global@gmail.com</p>
+
+                        <div className="text-xl text-white mt-3 poppins-medium">Chat us</div>
+                        <div className='inline-block mt-1'>
+                            <Link href="https://wa.me/+2347019392627" className='flex gap-1 items-center rounded text-white bg-green-600 px-2 py-1'>WhatsApp <BsWhatsapp /></Link>
+                        </div>
+                    </div>
+
+                    <div className="w-full md:w-3/12 p-3">
+                        <div className="text-xl text-white poppins-medium">Page links</div>
+
+                        <ul>
+                            <li className='mb-2 mt-2'><Link href="/" className='text-gray-200 hover:text-amber-300 hover:underline hover:font-bold transition-all duration-300'>Home</Link></li>
+                            <li className='mb-2'><Link href="/about" className='text-gray-200 hover:text-amber-300 hover:underline hover:font-bold transition-all duration-300'>About</Link></li>
+                            <li className='mb-2'><Link href="/schedule" className='text-gray-200 hover:text-amber-300 hover:underline hover:font-bold transition-all duration-300'>Schedule meeting</Link></li>
+                        </ul>
+                    </div>
+
+                    <div className="w-full md:w-3/12 p-3">
+                        <div className="text-xl text-white poppins-medium">Useful Links</div>
+                        <ul>
+                            <li className='mb-2 mt-2'><Link href="/services" className='text-gray-200 hover:text-amber-300 hover:underline hover:font-bold transition-all duration-300'>Services</Link></li>
+                            <li className='mb-2'><Link href="/#reviews" className='text-gray-200 hover:text-amber-300 hover:underline hover:font-bold transition-all duration-300'>Reviews</Link></li>
+                            <li className='mb-2'><Link href="/#faq" className='text-gray-200 hover:text-amber-300 hover:underline hover:font-bold transition-all duration-300'>FAQ</Link></li>
+                            <li className='mb-2'><Link href="/#news-letter" className='text-gray-200 hover:text-amber-300 hover:underline hover:font-bold transition-all duration-300'>News letter</Link></li>
+                            <li className='mb-2'><Link href="https://wa.me/+201103170327" className='text-gray-200 hover:text-amber-300 hover:underline hover:font-bold transition-all duration-300'>Free consultation</Link></li>
+                        </ul>
+                    </div>
                 </div>
-                <div className='border-t border-gray-800 max-w-[90%] mx-auto'><p className="text-center pt-4">All Rights Reserved CopyRight &copy; 2025 Eskanor Limited</p></div>
+
             </div>
-        </section>
+        </section >
     )
 }

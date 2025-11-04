@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-
 import "./globals.css";
-import NavBar from "@/components/NavBar";
-import Provider from "@/components/ThemeProvider";
-import Image from "next/image";
+import 'aos/dist/aos.css'; // The AOS CSS
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+
+import Footer from "@/components/Footer";
+import { Navigation } from "@/components/Navigation";
+import AosWrapper from "@/components/AosWrapper";
+import ProviderWrapper from "../components/localization-provider/ProviderWrapper";
 
 export const metadata: Metadata = {
-  title: "Krea"
+  title: "Techtrepreneur"
 };
 
 export default function RootLayout({
@@ -15,28 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body>
-        <Provider>
-          <main className="container mx-auto">
-            <NavBar />
-            {children}
+        <ProviderWrapper>
+          <Navigation />
+          <main>
+            <AosWrapper>
+              {children}
+            </AosWrapper>
           </main>
-          <section className="bg-black/90">
-            <div className="container mx-auto">
-              <div className="flex flex-wrap justify-between items-center p-4 text-white/90">
-                <div className="flex gap-3 items-center">
-                  <Image src="/krea.png" alt='krea' width={1000} height={1000} className='w-[45px] h-[45px] rounded-xl' />
-                  <div className="text-2xl">Krea AI</div>
-                </div>
-                <div className="min-w-[250px]">
-                  <span className="text-2xl inline-block mr-5">curated by</span>
-                  <span className="text-3xl inline-block font-semibold">Mobbin</span>
-                </div>
-              </div>
-            </div>
-          </section>
-        </Provider>
+          <Footer />
+        </ProviderWrapper>
       </body>
     </html>
   );
