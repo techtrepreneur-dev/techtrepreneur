@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 
 
 // Define the menu links
@@ -37,7 +36,7 @@ export function Navigation() {
                             key={item.href}
                             href={item.href}
                             // Added vertical padding here to make links bigger on hover
-                            className="px-4 py-[10px]  text-white/80  roboto-regular rounded-3xl transition-all duration-500  hover:text-white/60 tracking-wider"
+                            className="px-4 py-[10px]  text-white/80  roboto-regular rounded-3xl transition-all duration-500 hover:bg-white/80  hover:text-black/60 tracking-wider"
                         >
                             {item.label}
                         </Link>
@@ -52,7 +51,7 @@ export function Navigation() {
                 <Button
                     variant="ghost"
                     size="icon"
-                    className="md:hidden text-slate-700" // Hide button on desktop
+                    className="md:hidden text-white/80" // Hide button on desktop
                     onClick={toggleMenu}
                     aria-label="Toggle Menu"
                 >
@@ -71,9 +70,8 @@ export function Navigation() {
                         <Link
                             key={item.href}
                             href={item.href}
-                            onClick={toggleMenu} // Close menu when a link is clicked
-                            // Increased padding (py-3 px-4) for a bigger, touch-friendly mobile button
-                            className="inline  py-3 px-2 text-slate-800 poppins-medium rounded transition-all duration-500 hover:bg-blue-400 hover:text-white tracking-wider"
+                            onClick={toggleMenu}
+                            className="inline  py-2 px-2 text-white/80 roboto-regular rounded-3xl transition-all duration-500 hover:bg-white/80 hover:text-black/60 tracking-wider"
                         >
                             {item.label}
                         </Link>

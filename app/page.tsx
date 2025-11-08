@@ -20,9 +20,9 @@ export default function page() {
                     <section className="pt-15">
                         <div className="flex flex-wrap items-center justify-center">
                             <div className="basis-[100%] md:basis-[55%]">
-                                <div className="text-white/70 roboto-regular text-lg tracking-widest mb-5">Techtrepreneur <sup>_</sup> Lets's tech it</div>
+                                <div className="text-sm  text-white/70 roboto-regular md:text-lg tracking-widest mb-5">Techtrepreneur <sup>_</sup> Lets's tech it</div>
                                 <div className="text-4xl md:text-6xl md:leading-16 poppins-medium text-white">
-                                    Build and growth <br />with scalable <span className="text-amber-300">tools</span>
+                                    Build and scale<br />for the <span className="text-amber-300">future</span>
                                 </div>
                                 <Link href="" className="flex gap-1 items-center mt-4 ">
                                     <div className='text-sm px-5 py-[10px] poppins-medium rounded-3xl duration-500 roboto-regula transiton-all bg-white hover:text-black/80 hover:bg-white/80'>Get Started</div>
@@ -153,7 +153,7 @@ export default function page() {
                             </div>
                             <div className="basis-[100%] md:basis-[50%] roboto-regular" data-aos="fade-up">
                                 <div className="text-sm md:text-base">Don't know what you need?</div>
-                                <div className="text-2xl md:text-4xl">Schedul A Meeting <br /> Let's <span className="font-bold">Talk Business</span></div>
+                                <div className="text-3xl md:text-4xl">Schedul A Meeting <br /> Let's <span className="font-bold">Talk Business</span></div>
                                 <div className="text-sm max-w-[500px] mt-2">Feeling overwelmed? Want a website for your business<br /> but don't really know what you need or how to even get started? </div>
                                 <div className="text-sm max-w-[500px] ">Schedule a meeting today. We offer free counselling and tips on how to boots your online presense and increase business productivity.</div>
 

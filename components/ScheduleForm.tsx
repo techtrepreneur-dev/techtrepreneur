@@ -4,15 +4,15 @@ import { useState, useEffect, useActionState } from "react"
 import { DateCalendar, DigitalClock } from "@mui/x-date-pickers"
 import dayjs from "dayjs"
 import { GiStamper } from "react-icons/gi"
-// import { createBookingCookie, getBookedTimes } from "@/lib/resources/bookings"
 import { useRouter } from "next/navigation"
+import { getScheduledTimes } from "@/lib/actions/schedule"
 
-export default function ScheduleForm({ paymentId }: { paymentId: string | null }) {
+export default function ScheduleForm() {
   const [selectedDate, setSelectedDate] = useState(null)
   const [selectedTime, setSelectedTime] = useState(null)
-  const [bookedTimes, setBookedTimes] = useState([]);
+  const [scheduledTimes, setScheduledTimes] = useState([]);
 
-  const [notice, setNotice] = useState(!paymentId)
+  const [notice, setNotice] = useState(true)
   const [mounted, setMounted] = useState(false)
 
   const today = dayjs();
@@ -31,23 +31,22 @@ export default function ScheduleForm({ paymentId }: { paymentId: string | null }
 
 
   // This useEffect runs every time selectedDate changes
-  // useEffect(() => {
-  //   if (selectedDate) {
-  //     const formattedDate = dayjs(selectedDate).format('YYYY-MM-DD');
-  //     const loadBookedTimes = async () => {
-  //       try {
+  useEffect(() => {
+    if (selectedDate) {
+      const formattedDate = dayjs(selectedDate).format('YYYY-MM-DD');
+      const loadScheduledTimes = async () => {
+        try {
 
-  //         const times = await getBookedTimes(formattedDate);
-  //         setBookedTimes(times);
+          const times = await getScheduledTimes(formattedDate);
+          setScheduledTimes(times);
 
-  //       } catch (err) {
-  //         setBookedTimes([]);
-  //       }
-  //     }
-
-  //     loadBookedTimes();
-  //   }
-  // }, [selectedDate]); // This dependency ensures the effect re-runs when the date changes
+        } catch (err) {
+          setScheduledTimes([]);
+        }
+      }
+      loadScheduledTimes();
+    }
+  }, [selectedDate]); // This dependency ensures the effect re-runs when the date changes
 
 
   useEffect(() => {
@@ -61,7 +60,7 @@ export default function ScheduleForm({ paymentId }: { paymentId: string | null }
     const formattedTime = dayjs(timeValue).format('h:mm A')
 
     // Check if the formatted time dey inside the array of already booked times.
-    return bookedTimes.includes(formattedTime);
+    return scheduledTimes.includes(formattedTime);
   };
 
 
