@@ -3,9 +3,9 @@
 import { useState, useEffect, useActionState } from "react"
 import { DateCalendar, DigitalClock } from "@mui/x-date-pickers"
 import dayjs from "dayjs"
-import { GiStamper } from "react-icons/gi"
 import { useRouter } from "next/navigation"
-import { getScheduledTimes } from "@/lib/actions/schedule"
+import { createSchedule, getScheduledTimes } from "@/lib/actions/schedule"
+import { Loader2 } from "lucide-react"
 
 export default function ScheduleForm() {
   const [selectedDate, setSelectedDate] = useState(null)
@@ -19,7 +19,7 @@ export default function ScheduleForm() {
   // Check if the selected date is the same as today's date
   const isToday = (selectedDate && selectedDate.isSame(today, 'day')) ? true : false;
 
-  // const [state, formAction, isPending] = useActionState(createBookingCookie, null)
+  const [state, formAction, isPending] = useActionState(createSchedule, null)
 
   const router = useRouter()
 
@@ -38,6 +38,7 @@ export default function ScheduleForm() {
         try {
 
           const times = await getScheduledTimes(formattedDate);
+          console.log(times)
           setScheduledTimes(times);
 
         } catch (err) {
@@ -60,13 +61,13 @@ export default function ScheduleForm() {
     const formattedTime = dayjs(timeValue).format('h:mm A')
 
     // Check if the formatted time dey inside the array of already booked times.
-    return scheduledTimes.includes(formattedTime);
+    return scheduledTimes.length;
   };
 
 
   return (
     <div className="px-5">
-      <form action="" className="w-full poppins-regular">
+      <form action={formAction} className="w-full poppins-regular">
         {notice && (
           <div className="bg-gray-100 rounded-md border border-gray-200 p-2 max-w-[400px] mb-3 shadow">
             <div className="text-lg text-slate-800 font-semibold roboto-regular tracking-wider">Notice!</div>
@@ -83,12 +84,12 @@ export default function ScheduleForm() {
 
           <div className="mb-4 w-full md:basis-[47%]">
             <input type="text" name="name" className="w-full text-xs md:text-sm  p-2 md:p-[7px] rounded-md border border-gray-300 focus:outline-none" placeholder="Full Name" />
-            {/* {state?.fieldErrors?.name && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.name}</p>} */}
+            {state?.fieldErrors?.name && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.name}</p>}
           </div>
 
           <div className="mb-4 w-full md:basis-[47%]">
             <input type="text" name="phone" className="w-full text-xs md:text-sm p-2 md:p-[7px] rounded-md border border-gray-300 focus:outline-none" placeholder="Phone number" />
-            {/* {state?.fieldErrors?.phone && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.phone}</p>} */}
+            {state?.fieldErrors?.phone && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.phone}</p>}
           </div>
 
         </div>
@@ -96,12 +97,12 @@ export default function ScheduleForm() {
         <div className="flex flex-wrap md:flex-nowrap justify-between items-center">
           <div className="mb-4 w-full md:basis-[47%]">
             <input type="email" name="email" className="w-full text-xs md:text-sm p-2 md:p-[7px] rounded-md border border-gray-300 focus:outline-none" placeholder="Email" />
-            {/* {state?.fieldErrors?.email && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.email}</p>} */}
+            {state?.fieldErrors?.email && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.email}</p>}
           </div>
 
           <div className="mb-4 w-full md:basis-[47%]">
             <input type="text" name="address" className="w-full text-xs md:text-sm  p-2 md:p-[7px] rounded-md border border-gray-300 focus:outline-none" placeholder="Address" />
-            {/* {state?.fieldErrors?.address && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.address}</p>} */}
+            {state?.fieldErrors?.address && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.address}</p>}
           </div>
         </div>
         <div className="flex flex-wrap md:flex-nowrap gap-3">
@@ -114,7 +115,7 @@ export default function ScheduleForm() {
               onChange={(newDate) => setSelectedDate(newDate)}
             />
             <input type="hidden" name="date" value={dayjs(selectedDate).format('YYYY-MM-DD') || ""} />
-            {/* {state?.fieldErrors?.date && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.date}</p>} */}
+            {state?.fieldErrors?.date && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.date}</p>}
           </div>
 
           <div>
@@ -128,19 +129,16 @@ export default function ScheduleForm() {
               disablePast={isToday}
             />
             <input type="hidden" name="time" value={dayjs(selectedTime).format('h:mm A') || ""} />
-            {/* {state?.fieldErrors?.time && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.time}</p>} */}
+            {state?.fieldErrors?.time && <p className="text-xs mt-2 md:max-w-[250px] text-red-400">{state.fieldErrors.time}</p>}
           </div>
         </div>
-
 
         <div className="flex gap-3 items-center">
           <div className="border p-[1px] mt-5 md:mt-3 cursor-pointer">
-            <button className="text-sm  py-2 px-4 bg-slate-800 hover:bg-slate-700 transition-all duration-500 text-white font-medium flex gap-1 items-center">Book</button>
+            <button className="text-sm  py-2 px-4 bg-slate-800 hover:bg-slate-700 transition-all duration-500 text-white font-medium flex gap-1 items-center">{isPending ? <Loader2 className="animate-spin" /> : "Send"}</button>
           </div>
         </div>
-
       </form>
-
     </div>
   )
 }

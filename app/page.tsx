@@ -20,7 +20,7 @@ export default function page() {
                     <section className="pt-15">
                         <div className="flex flex-wrap items-center justify-center">
                             <div className="basis-[100%] md:basis-[55%]">
-                                <div className="text-sm  text-white/70 roboto-regular md:text-lg tracking-widest mb-5">Techtrepreneur <sup>_</sup> Lets's tech it</div>
+                                <div className="text-sm md:text-lg text-white/70 roboto-regular tracking-widest mb-5">Techtrepreneur <sup>_</sup> Lets's tech it</div>
                                 <div className="text-4xl md:text-6xl md:leading-16 poppins-medium text-white">
                                     Build and scale<br />for the <span className="text-amber-300">future</span>
                                 </div>
