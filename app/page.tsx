@@ -1,6 +1,5 @@
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { FAQ } from "@/components/FAQ";
-import { Navigation } from "@/components/Navigation";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import Testimonia from "@/components/Testimonial";
 import { ArrowRight } from "lucide-react";
