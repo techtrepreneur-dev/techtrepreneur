@@ -109,56 +109,67 @@ export const reviewData =
         {
             id: 1,
             name: "Treasure Morgan",
-            tes: "I appreciate their honesty and direct communication. They only took my case because they genuinely believed it would succeed, and they delivered! My work permit application was approved smoothly.",
+            tes: "The AI-driven solution was a game-changer, resulting in a 30% jump in our team's productivity almost immediately.",
             img: "/tes.jpg"
         },
 
         {
-            id: 5,
+            id: 2,
             name: "Ademola Collins",
-            tes: "I can't thank Dreamland Immigration Services enough for their exceptional support in helping me secure my work visa. Their expertise and attention to detail gave me peace of mind throughout the entire process.",
+            tes: "Techtrepreneur delivered an exceptionally robust, fast, and scalable full-stack architecture that is truly built for the future.",
             img: "/tes5.jpg"
         },
         {
-            id: 6,
-            name: "Peter  George",
-            tes: "Moving to a new country can be daunting, but Dreamland Immigration Services made the transition seamless. From initial consultation to final approval, they were always professional, responsive, and genuinely cared about my success.",
+            id: 3,
+            name: "Peter George",
+            tes: "They successfully developed our complex, custom SaaS platform, which is now our company's biggest competitive advantage.",
             img: "/tes6.jpg"
         },
 
         {
-            id: 8,
+            id: 4,
             name: "Akeem Hossain",
-            tes: "Dreamland Immigration Services made my dream of studying abroad a reality! Their team was incredibly supportive and guided me through every step of the visa application process. I highly recommend them!",
+            tes: "Using their data science expertise, Techtrepreneur turned our outdated static site into a powerful and dynamic business tool, giving us valuable insights.",
             img: "/tes8.jpg"
         },
+        {
+            id: 5,
+            name: "Kemi Ali",
+            tes: "Their team was incredibly transparent and responsive, making the entire project process smooth and delivering our launch in record time.",
+            img: "/tes2.jpg"
+        }
     ]
 
 export const QAndA = [
     {
         id: "1",
-        question: "Is the initial consultation truly free?",
-        answer: "Yes, our initial consultation is 100% free and comes with zero obligation. During this session, an expert will review your profile, assess your eligibility for various visa programs, and outline the best pathways based on your goals. We aim to provide clarity, not a sales pitch."
+        question: "How is AI used in your solutions?",
+        answer: "We build high-performance web solutions infused with proprietary AI and data analysis. Our goal is to make the web adaptive and intuitive, which helps in solving business challenges and boosting productivity more effectively."
     },
     {
         id: "2",
-        question: "What types of visas or immigration services do you handle?",
-        answer: " We specialize in a wide range of services, including Study Visas, Skilled Worker Visas, Permanent Residency (PR) applications, and Family Sponsorship. We focus primarily on [Insert Your Main Target Countries here, e.g., Canada, Australia, and the UK]."
+        question: "What size businesses do you serve?",
+        answer: "We provide services tailored to boost productivity for small, medium, and large-scale businesses looking for cutting-edge digital solutions."
     },
     {
         id: "3",
-        question: "Are you licensed to provide immigration advice?",
-        answer: "Yes, Dreamland Immigration Services works exclusively with fully licensed and regulated immigration consultants who are authorized to provide advice and representation for the countries we specialize in. We adhere strictly to ethical and legal standards."
+        question: "What is the full range of your services?",
+        answer: "Our services are categorized into three main areas: Web Development (including SaaS development), Fullstack Services (Frontend/Backend), and UI/UX (Research, Strategy, Prototyping, and Usability Testing)."
     },
     {
         id: "4",
-        question: "How long will my visa application take? ",
-        answer: "Processing times vary greatly depending on the visa category, the country, and government backlogs. We will provide you with the most current estimated timeline during your consultation and keep you updated throughout the entire process"
+        question: "How do I start a project with you?",
+        answer: "The process involves three easy steps: 1) Check Service List to find the best fit, 2) Schedule a Meeting to discuss your business requirements, and 3) Wait for Feedback from our team."
     },
     {
         id: "5",
-        question: "Do you guarantee my visa will be approved?",
-        answer: "No licensed consultant can legally guarantee a visa approval, as the final decision rests solely with the government's immigration office. However, we guarantee diligence and expertise. We ensure your application is accurate, complete, and submitted with the highest standard of presentation to maximize your chances of success."
+        question: "Do you develop custom SaaS platforms?",
+        answer: "Yes, our Web Development services include specialized Software-as-a-Service (SaaS) Development to create custom software solutions for your business needs."
     },
+    {
+        id: "6",
+        question: "How fast will I get feedback after a meeting?",
+        answer: "Once you schedule a meeting and provide your business requirements, we are committed to getting back to you with feedback within 6 hours."
+    }
 
 ]
