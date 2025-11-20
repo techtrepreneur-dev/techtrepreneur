@@ -3,11 +3,12 @@ import Image from 'next/image'
 import React from 'react'
 import { FaQuoteLeft } from 'react-icons/fa'
 
+
 export default function page() {
     return (
         <section className="">
             <div className="flex flex-wrap">
-                <div className="w-full md:w-6/12 px-5 py-8">
+                <div className="w-full md:w-6/12 px-5 py-8 ">
                     <ScheduleForm />
                 </div>
                 <div className="w-full md:w-6/12 hidden md:block bg-primary">
