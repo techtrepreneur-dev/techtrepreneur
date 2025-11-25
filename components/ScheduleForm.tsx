@@ -5,7 +5,7 @@ import { DateCalendar, DigitalClock } from "@mui/x-date-pickers"
 import dayjs from "dayjs"
 import { useRouter } from "next/navigation"
 import { createSchedule, getScheduledTimes } from "@/lib/actions/schedule"
-import { Loader2 } from "lucide-react"
+import { ArrowRight, Loader2 } from "lucide-react"
 
 export default function ScheduleForm() {
   const [selectedDate, setSelectedDate] = useState(null)
@@ -133,10 +133,11 @@ export default function ScheduleForm() {
           </div>
         </div>
 
-        <div className="flex gap-3 items-center">
-          <div className="border p-[1px] mt-5 md:mt-3 cursor-pointer">
-            <button className="text-sm  py-2 px-4 bg-slate-800 hover:bg-slate-700 transition-all duration-500 text-white font-medium flex gap-1 items-center">{isPending ? <Loader2 className="animate-spin" /> : "Send"}</button>
-          </div>
+        <div className="mt-5 md:mt-3">
+          <button className="flex gap-1 items-center cursor-pointer">
+            <div className='border border-black/30 px-5 py-[8px] shadow poppins-medium rounded-3xl duration-500 roboto-regula transiton-all  text-black/80 hover:text-black/100 hover:bg-white/80'>Book</div>
+            <div className='text-sm p-2 poppins-medium rounded-full duration-500 roboto-regula transiton-all bg-amber-300 text-black hover:text-black/80 hover:bg-white/80 shadow'> {isPending ? <Loader2 className="animate-spin" /> : <ArrowRight />} </div>
+          </button>
         </div>
       </form>
     </div>
