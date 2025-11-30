@@ -3,9 +3,13 @@
 import { useState, useEffect, useActionState } from "react"
 import { DateCalendar, DigitalClock } from "@mui/x-date-pickers"
 import dayjs from "dayjs"
-import { GiStamper } from "react-icons/gi"
 import { useRouter } from "next/navigation"
+<<<<<<< HEAD:components/BookForm.tsx
 import { getBookedTimes,createBooking } from "@/lib/actions/booking"
+=======
+import { createSchedule, getScheduledTimes } from "@/lib/actions/schedule"
+import { ArrowRight, Loader2 } from "lucide-react"
+>>>>>>> master:components/ScheduleForm.tsx
 
 export default function BookForm() {
   const [selectedDate, setSelectedDate] = useState(null)
@@ -19,7 +23,11 @@ export default function BookForm() {
   // Check if the selected date is the same as today's date
   const isToday = (selectedDate && selectedDate.isSame(today, 'day')) ? true : false;
 
+<<<<<<< HEAD:components/BookForm.tsx
   const [state, formAction, isPending] = useActionState(createBooking, null)
+=======
+  const [state, formAction, isPending] = useActionState(createSchedule, null)
+>>>>>>> master:components/ScheduleForm.tsx
 
   const router = useRouter()
 
@@ -37,8 +45,14 @@ export default function BookForm() {
       const loadBookedTimes = async () => {
         try {
 
+<<<<<<< HEAD:components/BookForm.tsx
           const times = await getBookedTimes(formattedDate);
           setBookedTimes(times);
+=======
+          const times = await getScheduledTimes(formattedDate);
+          console.log(times)
+          setScheduledTimes(times);
+>>>>>>> master:components/ScheduleForm.tsx
 
         } catch (err) {
           setBookedTimes([]);
@@ -60,7 +74,11 @@ export default function BookForm() {
     const formattedTime = dayjs(timeValue).format('h:mm A')
 
     // Check if the formatted time dey inside the array of already booked times.
+<<<<<<< HEAD:components/BookForm.tsx
     return bookedTimes.includes(formattedTime);
+=======
+    return scheduledTimes.length;
+>>>>>>> master:components/ScheduleForm.tsx
   };
 
   return (
@@ -131,14 +149,20 @@ export default function BookForm() {
           </div>
         </div>
 
+<<<<<<< HEAD:components/BookForm.tsx
         <div className="flex gap-3 items-center">
           <div className="border p-[1px] mt-5 md:mt-3 cursor-pointer">
             <button className="text-sm  py-2 px-4 bg-slate-800 hover:bg-slate-700 transition-all duration-500 text-white font-medium flex gap-1 items-center">Book</button>
           </div>
+=======
+        <div className="mt-5 md:mt-3">
+          <button className="flex gap-1 items-center cursor-pointer">
+            <div className='border border-black/30 px-5 py-[8px] shadow poppins-medium rounded-3xl duration-500 roboto-regula transiton-all  text-black/80 hover:text-black/100 hover:bg-white/80'>Book</div>
+            <div className='text-sm p-2 poppins-medium rounded-full duration-500 roboto-regula transiton-all bg-amber-300 text-black hover:text-black/80 hover:bg-white/80 shadow'> {isPending ? <Loader2 className="animate-spin" /> : <ArrowRight />} </div>
+          </button>
+>>>>>>> master:components/ScheduleForm.tsx
         </div>
-
       </form>
-
     </div>
   )
 }

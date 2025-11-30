@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+  binaryTargets = ["native", "rhel-openssl-3.0.x", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// prisma/schema.prisma
+
+model Schedule {
+  // Primary Key and ID
+  id      Int     @id @default(autoincrement()) // Unique identifier for each schedule entry
+
+  name    String  @db.VarChar(100) // Name of the person scheduling. Use @db.VarChar for length constraint.
+  
+  email   String  @unique 
+  
+  
+  phone   String @db.VarChar(20) 
+  
+  address String  @db.VarChar(255) // Full address string.
+
+  date    String // Date of the schedule/appointment.
+  
+ 
+  time    String  @db.VarChar(10)  // Store time as a string (e.g., "10:30 AM") for simplicity.
+
+
+  createdAt DateTime @default(now()) // Timestamp for when the record was created.
+  updatedAt DateTime @updatedAt     // Timestamp for the last update.
+}

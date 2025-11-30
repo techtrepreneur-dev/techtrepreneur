@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { FaQuoteLeft } from 'react-icons/fa'
 
+
 export default function page() {
     return (
         <section className="">

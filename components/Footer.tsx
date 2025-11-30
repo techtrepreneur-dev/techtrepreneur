@@ -19,7 +19,7 @@ export default function Footer() {
                             <p className='text-sm text-gray-300 max-w-[300px] poppins-regular'><i><span className='font-semibold'>Let's Tech It</span></i></p>
                         </div>
                         <div className="flex gap-3 text-white/50 my-3">
-                            <CiFacebook size={30} className="cursor-pointer hover:text-amber-300 transition-all duration-300" />
+                            <Link href="https://web.facebook.com/profile.php?id=61583752487444"><CiFacebook size={30} className="cursor-pointer hover:text-amber-300 transition-all duration-300" /></Link>
                             <CiLinkedin size={30} className="cursor-pointer hover:text-amber-300 transition-all duration-300" />
                             <CiTwitter size={30} className="cursor-pointer hover:text-amber-300 transition-all duration-300" />
                         </div>

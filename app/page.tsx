@@ -1,6 +1,5 @@
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { FAQ } from "@/components/FAQ";
-import { Navigation } from "@/components/Navigation";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import Testimonia from "@/components/Testimonial";
 import { ArrowRight } from "lucide-react";
@@ -20,7 +19,7 @@ export default function page() {
                     <section className="pt-15">
                         <div className="flex flex-wrap items-center justify-center">
                             <div className="basis-[100%] md:basis-[55%]">
-                                <div className="text-sm  text-white/70 roboto-regular md:text-lg tracking-widest mb-5">Techtrepreneur <sup>_</sup> Lets's tech it</div>
+                                <div className="text-sm md:text-lg text-white/70 roboto-regular tracking-widest mb-5">Techtrepreneur <sup>_</sup> Lets's tech it</div>
                                 <div className="text-4xl md:text-6xl md:leading-16 poppins-medium text-white">
                                     Build and scale<br />for the <span className="text-amber-300">future</span>
                                 </div>
@@ -68,7 +67,7 @@ export default function page() {
                                     <div className="flex flex-wrap md:flex-nowrap items-start justify-between basis-[47%] md:basis-[35%] rounded-xl p-4 bg-gray-200 gap-5">
                                         <BsFolder className="size-8 md:size-12" />
                                         <div>
-                                            <div className="text-2xl poppins-medium font-bold">200+</div>
+                                            <div className="text-2xl poppins-medium font-bold">100+</div>
                                             <div className="text-gray-800 text-sm md:text-base ">We deliver great work always</div>
                                         </div>
                                     </div>
@@ -84,7 +83,7 @@ export default function page() {
                                     <div className="flex flex-wrap md:flex-nowrap items-start justify-between basis-[47%] md:basis-[35%] rounded-xl p-4 bg-foreground gap-5">
                                         <div className="text-left"><FaUsers className="size-7 text-amber-300" /></div>
                                         <div className="text-white">
-                                            <div className="text-2xl poppins-medium font-bold">5K+</div>
+                                            <div className="text-2xl poppins-medium font-bold">500+</div>
                                             <div className="text-white/80 text-sm md:text-base">We have happy Clients worldwide</div>
                                         </div>
                                     </div>
