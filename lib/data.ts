@@ -2,7 +2,7 @@ import { MdWeb, MdOutlineWebStories } from 'react-icons/md';
 import { SiChromewebstore } from "react-icons/si";
 import { GrCloudSoftware } from "react-icons/gr";
 import { GoServer } from "react-icons/go";
-export const slideData =
+
     [
         {
             id: 1,
