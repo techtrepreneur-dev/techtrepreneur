@@ -4,12 +4,11 @@ import { useState, useEffect, useActionState } from "react"
 import { DateCalendar, DigitalClock } from "@mui/x-date-pickers"
 import dayjs from "dayjs"
 import { useRouter } from "next/navigation"
-<<<<<<< HEAD:components/BookForm.tsx
+
 import { getBookedTimes,createBooking } from "@/lib/actions/booking"
-=======
-import { createSchedule, getScheduledTimes } from "@/lib/actions/schedule"
+
 import { ArrowRight, Loader2 } from "lucide-react"
->>>>>>> master:components/ScheduleForm.tsx
+
 
 export default function BookForm() {
   const [selectedDate, setSelectedDate] = useState(null)
@@ -79,7 +78,7 @@ export default function BookForm() {
               className="text-xs px-2 mt-2 cursor-pointer py-1 rounded border border-gray-400 text-slate-700 font-bold">Got it</button>
           </div>
         )}
-        
+
         <div className="text-sm text-gray-700">Personal Info</div>
         <div className="flex flex-wrap md:flex-nowrap justify-between mt-3 items-center">
 
