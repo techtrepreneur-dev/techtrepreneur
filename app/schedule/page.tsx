@@ -1,4 +1,4 @@
-import ScheduleForm from '@/components/ScheduleForm'
+import BookForm from '@/components/BookForm'
 import Image from 'next/image'
 import React from 'react'
 import { FaQuoteLeft } from 'react-icons/fa'
@@ -8,7 +8,7 @@ export default function page() {
         <section className="">
             <div className="flex flex-wrap">
                 <div className="w-full md:w-6/12 px-5 py-8">
-                    <ScheduleForm />
+                    <BookForm />
                 </div>
                 <div className="w-full md:w-6/12 hidden md:block bg-primary">
                     <div className="relative">
