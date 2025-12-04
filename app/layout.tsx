@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import 'aos/dist/aos.css'; // The AOS CSS
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { Toaster } from "sonner"
 
 import Footer from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
@@ -28,6 +27,7 @@ export default function RootLayout({
               {children}
             </AosWrapper>
           </main>
+          <Toaster />
           <Footer />
         </ProviderWrapper>
       </body>

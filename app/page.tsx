@@ -1,5 +1,6 @@
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { FAQ } from "@/components/FAQ";
+import NewsLetterForm from "@/components/NewsLetterForm";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import Testimonia from "@/components/Testimonial";
 import { ArrowRight } from "lucide-react";
@@ -91,8 +92,8 @@ export default function page() {
                                     <div className="flex flex-wrap md:flex-nowrap items-start justify-between basis-[47%] md:basis-[35%] rounded-xl p-4 bg-gray-200 gap-5">
                                         <CiTrophy className="size-8 md:size-12" />
                                         <div>
-                                            <div className="text-2xl poppins-medium font-bold">20+</div>
-                                            <div className="text-gray-800 text-sm md:text-base ">Award-Winning Works</div>
+                                            <div className="text-2xl poppins-medium font-bold">100+</div>
+                                            <div className="text-gray-800 text-sm md:text-base ">Scaled Businesses</div>
                                         </div>
                                     </div>
                                 </div>
@@ -189,10 +190,7 @@ export default function page() {
 
                                 <div className="mt-10 text-white roboto-regular">
                                     <div className="text-white/80">Suscribe to our News Letter for updates</div>
-                                    <form action="" className="mt-2 max-w-[400px]">
-                                        <input type="email" placeholder="Email" className="w-full border-b border-b-white/50 p-2 " required />
-                                        <button className="flex gap-1 justify-center items-center w-full mt-2 p-3 rounded-md bg-white/80 hover:bg-white transition-all duration-300 cursor-pointer text-black/80 text-center font-semibold">Send <FaPaperPlane /></button>
-                                    </form>
+                                    <NewsLetterForm />
                                 </div>
                             </div>
                         </div>

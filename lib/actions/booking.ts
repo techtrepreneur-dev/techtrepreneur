@@ -1,7 +1,7 @@
 "use server"
 
 import z from "zod"
-import { createBookingValidation } from "../validations/booking"
+import { BookingValidation } from "../validations/booking"
 
 export const createBooking = async (prevstate: unknown, formData: FormData) => {
 
@@ -15,7 +15,8 @@ export const createBooking = async (prevstate: unknown, formData: FormData) => {
       time: formData.get("time")
     }
 
-    const validatedData = await createBookingValidation.parseAsync(formValues)
+
+    const validatedData = await BookingValidation.parseAsync(formValues)
 
     const res = await fetch(process.env.API_URL + "/api/booking/create", {
       method: 'POST',
@@ -27,10 +28,10 @@ export const createBooking = async (prevstate: unknown, formData: FormData) => {
 
     if (res.status !== 201) console.log(res)
 
-    const resData: Promise<{ success: boolean, data:Booking[], error: string }> = res.json()
+    const resData: Promise<{ success: boolean, data: Booking[], error: string }> = res.json()
     const data = await resData
 
-    return { ...data }
+    return data
 
   } catch (error) {
     if (error instanceof z.ZodError) {
@@ -39,21 +40,19 @@ export const createBooking = async (prevstate: unknown, formData: FormData) => {
     }
     else {
       console.log(error)
-      throw new Error("Something went wrong")
     }
   }
 }
 
 export async function getBookedTimes(selectedDate: string) {
 
-  const response = await fetch(`${process.env.API_URL}/api/booking/date/all?date=${selectedDate}`);
+  const res = await fetch(`${process.env.API_URL}/api/booking/date/all?date=${selectedDate}`);
 
-  if (!response.ok) {
-    throw new Error('Failed to fetch booked times');
+  if (!res.ok) {
+    console.log(res)
   }
 
-  const data = await response.json();
+  const data = await res.json();
   return data.data.map((item) => item.time);
-
 }
 

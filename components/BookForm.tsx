@@ -5,9 +5,10 @@ import { DateCalendar, DigitalClock } from "@mui/x-date-pickers"
 import dayjs from "dayjs"
 import { useRouter } from "next/navigation"
 
-import { getBookedTimes,createBooking } from "@/lib/actions/booking"
+import { getBookedTimes, createBooking } from "@/lib/actions/booking"
 
 import { ArrowRight, Loader2 } from "lucide-react"
+import { toast } from "sonner"
 
 
 export default function BookForm() {
@@ -29,7 +30,8 @@ export default function BookForm() {
 
   useEffect(() => {
     if (state !== null && state?.fieldErrors === undefined) {
-      console.log("okay")
+      toast.success(" Meeting booked successfully")
+      router.push("/#news-letter")
     }
   }, [state]);
 

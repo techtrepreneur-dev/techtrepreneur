@@ -27,7 +27,7 @@ export default function Footer() {
 
                     <div className="w-full md:w-3/12 p-3">
                         <div className="text-xl text-white poppins-medium">Call us at:</div>
-                        <p className='mt-1 text-gray-200 roboto-regular text-sm'>+234 0719393627</p>
+                        <p className='mt-1 text-gray-200 roboto-regular text-sm'>+234 0709393627</p>
 
                         <div className="text-xl text-white mt-3 poppins-medium">Send an email</div>
                         <p className='mt-1 text-gray-200 roboto-regular text-sm'>techtrepreneur.global@gmail.com</p>
